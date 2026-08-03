@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Laundry Management System</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <link rel="stylesheet" href="/Authentication/login.css">
+
+</head>
+
+<body>
+
+
+    <main class="auth-container">
+
+
+        <section class="branding-panel">
+
+            <div class="branding-content">
+
+                <i class="fa-solid fa-shirt logo-icon"></i>
+
+                <h1>Laundry Management System</h1>
+
+                <p>
+                    Manage your laundry business with confidence.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="login-panel">
+
+            <div class="login-card">
+
+                <h2>Welcome Back 👋</h2>
+
+                <p class="subtitle">
+                    Sign in to continue managing your laundry business.
+                </p>
+
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <input type="text" id="username" placeholder="Enter your username" autocomplete="username"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input type="password" id="password" placeholder="Enter your password"
+                                autocomplete="current-password" required>
+
+                            <button type="button" class="toggle-password" id="togglePassword">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="remember-me">
+
+                        <label>
+
+                            <input type="checkbox" id="rememberMe">
+
+                            Remember Me
+
+                        </label>
+
+                    </div>
+
+                    <button type="submit" class="login-btn">
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                        Login
+
+                    </button>
+
+                </form>
+
+
+                <div class="auth-links">
+
+                    <a href="forgot-password.html">
+                        Forgot Password?
+                    </a>
+
+                    <p>
+
+                        Don't have an account?
+
+                        <a href="Registers.html">
+                            Register
+                        </a>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+
+    <script src="Authentication/login.js"></script>
+
+</body>
+
+</html>

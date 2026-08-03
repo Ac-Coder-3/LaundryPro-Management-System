@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Orders | Laundry Management System</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <aside class="sidebar">
+
+
+            <div class="logo">
+
+                <i class="fa-solid fa-soap"></i>
+
+                <h2>LaundryPro</h2>
+
+            </div>
+
+
+            <nav>
+
+                <ul>
+
+                    <li>
+
+                        <a href="index.html">
+
+                            <i class="fa-solid fa-table-columns"></i>
+
+                            <span>Dashboard</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="customers.html">
+
+                            <i class="fa-solid fa-users"></i>
+
+                            <span>Customers</span>
+
+                        </a>
+
+                    </li>
+
+                    <li class="active">
+
+                        <a href="orders.html">
+
+                            <i class="fa-solid fa-shirt"></i>
+
+                            <span>Orders</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="payments.html">
+
+                            <i class="fa-solid fa-money-bill-wave"></i>
+
+                            <span>Payments</span>
+
+                        </a>
+
+                    </li>
+
+                   
+
+                </ul>
+
+            </nav>
+
+            <div class="logout">
+
+                <a href="#" id="logoutBtn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+
+        <main class="main-content">
+            <header class="header">
+
+                <div class="header-left">
+
+                    <h1>Orders</h1>
+
+                    <p>Manage all laundry orders.</p>
+
+                </div>
+
+                <div class="header-right">
+
+                    <button class="notification-btn">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                    </button>
+
+                    <div class="profile">
+
+                        <img src="https://i.pravatar.cc/100" alt="Admin">
+
+                        <div>
+
+                            <h4 id="profileName">
+                                Administrator
+                            </h4>
+
+                            <small id="profileRole">
+                                Admin
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <section class="table-section">
+
+             
+
+                <div class="table-header">
+
+                    <h2>Order Management</h2>
+
+                </div>
+
+
+              
+
+                <form id="orderForm">
+
+                    <div class="form-grid">
+
+
+
+
+                        <div class="form-group">
+
+                            <label for="customerName">
+
+                                Customer
+
+                            </label>
+
+                            <select id="customerName">
+
+                                <option value="">
+
+                                    Select Customer
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="serviceType">
+
+                                Service
+
+                            </label>
+
+                            <select id="serviceType">
+
+                                <option value="">
+
+                                    Select Service
+
+                                </option>
+
+                                <option>
+
+                                    Wash & Fold
+
+                                </option>
+
+                                <option>
+
+                                    Dry Cleaning
+
+                                </option>
+
+                                <option>
+
+                                    Ironing
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="clothesType">
+
+                                Clothes Type
+
+                            </label>
+
+                            <input type="text" id="clothesType" placeholder="Example: Shirt">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="quantity">
+
+                                Quantity
+
+                            </label>
+
+                            <input type="number" id="quantity" min="1" placeholder="0">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="price">
+
+                                Price
+
+                            </label>
+
+                            <input type="number" id="price" min="0" step="0.01" placeholder="Enter price">
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="pickupDate">
+
+                                Pickup Date
+
+                            </label>
+
+                            <input type="date" id="pickupDate">
+
+                        </div>
+
+                     
+                    </div>
+
+
+                    <button type="submit" class="save-btn" id="submitOrderBtn">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Create Order
+
+                    </button>
+
+                </form>
+
+           
+
+                <div class="search-box">
+
+                    <input type="text" id="searchOrder" placeholder="Search order...">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </div>
+
+               
+
+                <div class="table-wrapper">
+
+                    <table id="ordersTable">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Order ID</th>
+
+                                <th>Customer</th>
+
+                                <th>Service</th>
+
+                                <th>Clothes</th>
+
+                                <th>Qty</th>
+
+                                <th>Price</th>
+
+                                <th>Pickup</th>
+
+                                <th>Status</th>
+
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="ordersTableBody">
+
+                            <tr id="emptyOrderRow">
+
+                                <td colspan="9" class="text-center">
+
+                                    No orders found.
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="/Authentication/authGuard.js"></script>
+    <script src="Authentication/authorization.js"></script>
+    <script src="Authentication/profile.js"></script>
+    <script src="js/orders.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Laundry Management System</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+
+    <div class="container">
+
+
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <i class="fa-solid fa-soap"></i>
+                <h2>LaundryPro</h2>
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li class="active">
+                        <a href="#">
+                            <i class="fa-solid fa-table-columns"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./customers.html">
+                            <i class="fa-solid fa-users"></i>
+                            <span>Customers</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./orders.html">
+                            <i class="fa-solid fa-shirt"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./payments.html">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                            <span>Payments</span>
+                        </a>
+                    </li>
+
+                   
+
+                    <li id="usersMenu">
+                        <a href="./users.html">
+                            <i class="fa-solid fa-user-shield"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <div class="logout">
+
+                <a href="#" id="logoutBtn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <main class="main-content">
+
+
+
+            <header class="header">
+
+                <div class="header-left">
+
+                    <h1>Dashboard</h1>
+
+                    <p id="welcomeMessage">
+
+                        Welcome back, Admin 👋
+
+                    </p>
+
+                </div>
+
+                <div class="header-right">
+
+                    <button class="notification-btn">
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+
+                    <div class="profile">
+
+                        <img src="https://i.pravatar.cc/100" alt="Admin">
+
+                        <div>
+
+                            <h4 id="profileName">
+                                Administrator
+                            </h4>
+
+                            <small id="profileRole">
+                                Admina
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <section class="cards">
+
+                <div class="card">
+
+                    <div class="icon blue">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div class="info">
+
+                        <h3 id="totalCustomers">0</h3>
+
+                        <p>Total Customers</p>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="icon orange">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+
+                    <div class="info">
+
+                        <h3 id="totalOrders">0</h3>
+
+                        <p>Active Orders</p>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="icon green">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div class="info">
+
+                        <h3 id="pickedUpOrders">0</h3>
+
+                        <p>Picked Up Orders</p>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="icon red">
+                        <i class="fa-solid fa-money-bill"></i>
+                    </div>
+
+                    <div class="info">
+
+                        <h3 id="totalRevenue">$0</h3>
+
+                        <p>Today's Income</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <section class="table-section">
+
+                <div class="table-header">
+
+                    <h2>Recent Orders</h2>
+
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Service</th>
+                                <th>Status</th>
+                                <th>Amount</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="recentOrdersBody">
+
+                            <tr>
+
+                                <td>#1001</td>
+                                <td>Ahmed Ali</td>
+                                <td>Wash & Iron</td>
+                                <td><span class="status processing">Processing</span></td>
+                                <td>$12</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>#1002</td>
+                                <td>Fatima Noor</td>
+                                <td>Dry Cleaning</td>
+                                <td><span class="status ready">Ready</span></td>
+                                <td>$18</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>#1003</td>
+                                <td>Mohamed Hassan</td>
+                                <td>Ironing</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                                <td>$9</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <script src="Authentication/authGuard.js"></script>
+    <script src="Authentication/authorization.js"></script>
+    <script src="Authentication/profile.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payments | Laundry Management System</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <aside class="sidebar">
+
+
+            <div class="logo">
+
+                <i class="fa-solid fa-soap"></i>
+
+                <h2>LaundryPro</h2>
+
+            </div>
+
+
+            <nav>
+
+                <ul>
+
+                    <li>
+
+                        <a href="index.html">
+
+                            <i class="fa-solid fa-table-columns"></i>
+
+                            <span>Dashboard</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="customers.html">
+
+                            <i class="fa-solid fa-users"></i>
+
+                            <span>Customers</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="orders.html">
+
+                            <i class="fa-solid fa-shirt"></i>
+
+                            <span>Orders</span>
+
+                        </a>
+
+                    </li>
+
+                    <li class="active">
+
+                        <a href="payments.html">
+
+                            <i class="fa-solid fa-money-bill-wave"></i>
+
+                            <span>Payments</span>
+
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+            </nav>
+
+            <div class="logout">
+
+                <a href="#" id="logoutBtn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+
+        <main class="main-content">
+            <header class="header">
+
+                <div class="header-left">
+
+                    <h1>Payments</h1>
+
+                    <p>Manage all customer payments.</p>
+
+                </div>
+
+                <div class="header-right">
+
+                    <button class="notification-btn">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                    </button>
+
+                    <div class="profile">
+
+                        <img src="https://i.pravatar.cc/100" alt="Admin">
+
+                        <div>
+                            <h4 id="profileName">
+                                Administrator
+                            </h4>
+
+                            <small id="profileRole">
+                                Admin
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+            
+
+            <section class="table-section">
+
+               
+
+                <div class="table-header">
+
+                    <h2>Payment Management</h2>
+
+                </div>
+
+                <form id="paymentForm">
+
+                    <div class="form-grid">
+
+
+
+                        <div class="form-group">
+
+                            <label for="orderSelect">
+
+                                Select Order
+
+                            </label>
+
+                            <select id="orderSelect" required>
+
+                                <option value="">
+
+                                    Select Order
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="amountPaid">
+
+                                Amount Paid
+
+                            </label>
+
+                            <input type="number" id="amountPaid" placeholder="Enter payment amount" min="0" step="0.01"
+                                required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="totalPrice">
+
+                                Total Price
+
+                            </label>
+
+                            <input type="number" id="totalPrice" readonly>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="remainingAmount">
+
+                                Remaining Amount
+
+                            </label>
+
+                            <input type="number" id="remainingAmount" readonly>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="paymentMethod">
+
+                                Payment Method
+
+                            </label>
+
+                            <select id="paymentMethod" required>
+
+                                <option value="Cash">
+
+                                    Cash
+
+                                </option>
+
+                                <option value="Mobile Money">
+
+                                    Mobile Money
+
+                                </option>
+
+                                <option value="Bank">
+
+                                    Bank
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="paymentDate">
+
+                                Payment Date
+
+                            </label>
+
+                            <input type="date" id="paymentDate" required>
+
+                        </div>
+
+                     
+
+
+
+                    </div>
+
+
+
+                    <button type="submit" class="save-btn" id="submitPaymentBtn">
+
+                        <i class="fa-solid fa-money-bill-wave"></i>
+
+                        Record Payment
+
+                    </button>
+
+
+
+                </form>
+
+             
+
+                <div class="search-box"> <input type="text" id="searchPayment" placeholder="Search payment..."> <i
+                        class="fa-solid fa-magnifying-glass"></i> </div>
+
+        
+
+                <div class="table-wrapper">
+                    <table id="paymentsTable">
+                        <thead>
+                            <tr>
+                                <th>Payment ID</th>
+                                <th>Order</th>
+                                <th>Amount</th>
+                                <th>Method</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="paymentsTableBody">
+                            <tr id="emptyPaymentRow">
+                                <td colspan="7" class="text-center"> No payments found. </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+    <script src="/Authentication/authGuard.js"></script>
+    <script src="Authentication/authorization.js"></script>
+    <script src="Authentication/profile.js"></script>
+    <script src="js/payments.js"></script>
+
+</body>
+
+</html>

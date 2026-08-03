@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Management</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/users.css">
+
+</head>
+
+<body>
+
+
+
+    <div class="container">
+
+   
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-soap"></i>
+
+                <h2>LaundryPro</h2>
+
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li>
+
+                        <a href="./index.html">
+
+                            <i class="fa-solid fa-table-columns"></i>
+
+                            <span>Dashboard</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="./customers.html">
+
+                            <i class="fa-solid fa-users"></i>
+
+                            <span>Customers</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="./orders.html">
+
+                            <i class="fa-solid fa-shirt"></i>
+
+                            <span>Orders</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="./payments.html">
+
+                            <i class="fa-solid fa-money-bill-wave"></i>
+
+                            <span>Payments</span>
+
+                        </a>
+
+                    </li>
+
+                    <li class="active" id="usersMenu">
+
+                        <a href="./users.html">
+
+                            <i class="fa-solid fa-user-shield"></i>
+
+                            <span>Users</span>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <div class="logout">
+
+                <a href="#" id="logoutBtn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+       
+
+        <main class="main-content">
+
+      
+
+            <header class="header">
+
+                <div class="header-left">
+
+                    <h1>User Management</h1>
+
+                    <p>
+
+                        Manage system users, permissions and account status.
+
+                    </p>
+
+                </div>
+
+                <div class="header-right">
+                    <button class="notification-btn">
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+                    <div class="profile">
+                        <img src="https://i.pravatar.cc/100" alt="Profile">
+                        <div>
+                            <h4 id="profileName">
+                                Administrator
+                            </h4>
+
+                            <small id="profileRole">
+                                Admin
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+         
+
+            <section class="table-section">
+
+
+                <div class="table-header">
+
+                    <div class="table-title">
+                        <h2>
+                            <i class="fa-solid fa-user-shield"></i>
+                            Users
+                        </h2>
+                        <p>
+                            View and manage all registered users.
+                        </p>
+                    </div>
+
+                    <div class="table-actions">
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input type="text" id="searchUser" placeholder="Search users...">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>ID</th>
+
+                                <th>Avatar</th>
+
+                                <th>Full Name</th>
+
+                                <th>Username</th>
+
+                                <th>Email</th>
+
+                                <th>Role</th>
+
+                                <th>Status</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="usersTableBody">
+
+                            <tr>
+
+                                <td colspan="8" class="empty-message">
+
+                                    <i class="fa-solid fa-users"></i>
+
+                                    <h3>No Users Found</h3>
+
+                                    <p>
+
+                                        Registered users will appear here.
+
+                                    </p>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+          
+
+            <div id="editUserModal" class="modal">
+
+                <div class="modal-content">
+
+
+                    <div class="modal-header">
+
+                        <div>
+
+                            <h2>
+
+                                <i class="fa-solid fa-user-pen"></i>
+
+                                Edit User
+
+                            </h2>
+
+                            <p>
+
+                                Update user information, role and account status.
+
+                            </p>
+
+                        </div>
+
+                        <button type="button" id="cancelBtn" class="close-modal-btn">
+
+                            <i class="fa-solid fa-xmark"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <form id="editUserForm">
+
+                        <div class="modal-body">
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+
+                                    <label for="editFullName">
+
+                                        Full Name
+
+                                    </label>
+
+                                    <input type="text" id="editFullName" required>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="editUsername">
+
+                                        Username
+
+                                    </label>
+
+                                    <input type="text" id="editUsername" required>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="editEmail">
+
+                                    Email Address
+
+                                </label>
+
+                                <input type="email" id="editEmail" required>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="form-group">
+
+                                    <label for="editRole">
+
+                                        User Role
+
+                                    </label>
+
+                                    <select id="editRole">
+
+                                        <option value="admin">
+
+                                            Admin
+
+                                        </option>
+
+                                        <option value="employee">
+
+                                            Employee
+
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="editStatus">
+
+                                        Account Status
+
+                                    </label>
+
+                                    <select id="editStatus">
+
+                                        <option value="active">
+
+                                            Active
+
+                                        </option>
+
+                                        <option value="inactive">
+
+                                            Inactive
+
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="modal-footer">
+
+                            <button type="button" id="closeModalBtn" class="cancel-btn">
+
+                                Cancel
+
+                            </button>
+
+                            <button type="submit" id="saveUserBtn" class="save-btn">
+
+                                <i class="fa-solid fa-floppy-disk"></i>
+
+                                Save Changes
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+
+    <script src="Authentication/authGuard.js"></script>
+    <script src="Authentication/authorization.js"></script>
+    <script src="Authentication/profile.js"></script>
+    <script src="js/users.js"></script>
+
+</body>
+
+</html>

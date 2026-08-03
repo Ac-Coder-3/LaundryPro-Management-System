@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customers | Laundry Management System</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+    <div class="container">
+
+
+
+        <aside class="sidebar">
+            <div class="logo">
+
+                <i class="fa-solid fa-soap"></i>
+
+                <h2>LaundryPro</h2>
+
+            </div>
+
+
+            <nav>
+
+                <ul>
+
+                    <li>
+
+                        <a href="index.html">
+
+                            <i class="fa-solid fa-table-columns"></i>
+
+                            <span>Dashboard</span>
+
+                        </a>
+
+                    </li>
+
+                    <li class="active">
+
+                        <a href="customers.html">
+
+                            <i class="fa-solid fa-users"></i>
+
+                            <span>Customers</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="orders.html">
+
+                            <i class="fa-solid fa-shirt"></i>
+
+                            <span>Orders</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="payments.html">
+
+                            <i class="fa-solid fa-money-bill-wave"></i>
+
+                            <span>Payments</span>
+
+                        </a>
+
+                    </li>
+
+                   
+
+                 
+
+                </ul>
+
+            </nav>
+
+            <div class="logout">
+
+                <a href="#" id="logoutBtn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <main class="main-content">
+
+
+
+            <header class="header">
+
+                <div class="header-left">
+
+                    <h1>Customers</h1>
+
+                    <p>Manage all laundry customers.</p>
+
+                </div>
+
+                <div class="header-right">
+
+                    <button class="notification-btn">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                    </button>
+
+                    <div class="profile">
+
+                        <img src="https://i.pravatar.cc/100" alt="Admin">
+
+                        <div>
+
+                            <h4 id="profileName">
+                                Administrator
+                            </h4>
+
+                            <small id="profileRole">
+                                Admin
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <section class="table-section">
+
+
+
+                <div class="table-header">
+
+                    <h2>Customer Management</h2>
+
+                </div>
+
+
+
+
+                <form id="customerForm">
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="fullName">Full Name</label>
+
+                            <input type="text" id="fullName" placeholder="Enter customer name" required>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="phoneNumber">Phone Number</label>
+
+                            <input type="tel" id="phoneNumber" placeholder="Enter phone number" required>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="email">Email</label>
+
+                            <input type="email" id="email" placeholder="Enter email address">
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="address">Address</label>
+
+                            <input type="text" id="address" placeholder="Enter customer address">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <button type="submit" class="save-btn" id="submitBtn">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Save Customer
+
+                    </button>
+
+                </form>
+
+
+
+
+                <div class="search-box">
+
+                    <input type="text" id="searchCustomer" placeholder="Search customer...">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </div>
+
+
+
+
+                <div class="table-wrapper">
+
+                    <table id="customerTable">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>ID</th>
+
+                                <th>Full Name</th>
+
+                                <th>Phone</th>
+
+                                <th>Email</th>
+
+                                <th>Address</th>
+
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+
+
+
+                        <tbody id="customerTableBody">
+
+
+
+                            <tr id="emptyRow">
+
+                                <td colspan="6" class="text-center">
+
+                                    No customers found.
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+
+            <script src="/Authentication/authGuard.js"></script>
+            <script src="Authentication/authorization.js"></script>
+            <script src="Authentication/profile.js"></script>
+            <script src="js/customers.js"></script>
+        </main>
+
+    </div>
+
+</body>
+
+</html>
